@@ -1,26 +1,23 @@
-package com.ecnu.petHospital.entity;
+package com.ecnu.petHospital.user.param;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
-    @Id
-    private int id;
+public class LoginParam {
 
+    @NotNull
+    @Length(min = 1, max = 20)
     private String username;
 
+    @NotNull
+    @Length(min = 8, max = 20)
     private String password;
-    @NotNull(message=" 邮箱作为登录不能为空 ")
-    private String email;
-
-    private boolean admin;
-
 
 }
