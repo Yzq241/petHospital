@@ -22,7 +22,7 @@ public interface UserMapper {
     int getCountOfUser();
 
     //插入新用户
-    @Insert("insert into user(id,username,password,telephone,admin) values (#{id},#{username},#{password},#{telephone},#{admin});")
+    @Insert("insert into user(id,username,password,email,admin) values (#{id},#{username},#{password},#{email},#{admin});")
     @Options(useGeneratedKeys = true, keyProperty = "id")
     int insertUser(User user);
 
@@ -40,6 +40,10 @@ public interface UserMapper {
     @Update("update user set telephone=#{telephone} where id=#{id};")
     int updateTelephoneById(@Param("id") Integer id,
                             @Param("telephone") String telephone);
+    //更新邮箱
+    @Update("update user set email=#{email} where id=#{id};")
+    int updateEmailById(@Param("id") Integer id,
+                            @Param("email") String email);
     //更改权限
     @Update("update user set admin=#{admin} where id=#{id}")
     int updatePermission(@Param("id") Integer id,

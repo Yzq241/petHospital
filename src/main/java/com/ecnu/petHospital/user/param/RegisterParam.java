@@ -20,7 +20,7 @@ public class RegisterParam {
     @Length(min = 8, max = 20)
     private String password;
 
-    @Length(min = 11, max = 11)
-    private String telephone;
+    @NotNull
+    private String email;
 
 }

@@ -16,5 +16,5 @@ public class UserSessionInfo {
 
     private String username;
 
-    private Integer admin;
+    private Boolean admin;
 }

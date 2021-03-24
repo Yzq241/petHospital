@@ -51,8 +51,8 @@ public class UserServiceImp implements UserService {
     public int register(RegisterParam registerParam) {
         String username = registerParam.getUsername();
         String password = registerParam.getPassword();
-        String telephone = registerParam.getTelephone();
-        System.out.println(telephone);
+        String email = registerParam.getEmail();
+        System.out.println(email);
 
         if(userMapper.getUserByUsername(username) != null)
             throw new UsernameAlreadyExistException();
@@ -60,10 +60,13 @@ public class UserServiceImp implements UserService {
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
-        user.setEmail(telephone);
+        user.setEmail(email);
         user.setAdmin(false);
 
+
+        System.out.println(user);
         return userMapper.insertUser(user);
+//        return 1;
     }
 
 
@@ -86,6 +89,11 @@ public class UserServiceImp implements UserService {
     @Override
     public int updateTelephone(Integer id, String telephone) {
         return userMapper.updateTelephoneById(id,telephone);
+    }
+
+    @Override
+    public int updateEmail(Integer id, String email) {
+        return userMapper.updateEmailById(id,email);
     }
 
     @Override

@@ -59,12 +59,19 @@ public class UserController {
             service.updateTelephone(userSessionInfo.getId(),telephone);
             return CommonResult.success();
     }
+    @PostMapping("update/email")
+    public Result<?> updateEmail(@SessionAttribute UserSessionInfo userSessionInfo,
+                                     @RequestParam String email){
+
+        service.updateEmail(userSessionInfo.getId(),email);
+        return CommonResult.success();
+    }
 
     @PostMapping("update/permission")
     public Result<?> updatePermission(@SessionAttribute UserSessionInfo userSessionInfo,
                                       @RequestParam Integer userId,
                                       @RequestParam Integer permission){
-        if(userSessionInfo.getAdmin() != 1){
+        if(!userSessionInfo.getAdmin()){
             return CommonResult.accessDenied();
         }
         service.updatePermission(userId,permission);
@@ -74,7 +81,7 @@ public class UserController {
     @PostMapping("delete")
     public Result<?> deleteUser(@SessionAttribute UserSessionInfo userSessionInfo,
                                 @RequestParam Integer userId){
-        if(userSessionInfo.getAdmin() != 1){
+        if(!userSessionInfo.getAdmin()){
             return CommonResult.accessDenied();
         }
         service.deleteUserById(userId);
@@ -87,7 +94,7 @@ public class UserController {
                                 @RequestParam Integer pageSize){
 
         PageParam pageParam = new PageParam(pageNum,pageSize);
-        if(userSessionInfo.getAdmin() != 1){
+        if(!userSessionInfo.getAdmin()){
             return CommonResult.accessDenied();
         }
 

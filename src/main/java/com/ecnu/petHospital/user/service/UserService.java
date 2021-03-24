@@ -33,6 +33,9 @@ public interface UserService {
     //更新用户电话
     int updateTelephone(Integer id, String telephone);
 
+    //更新用户邮箱
+    int updateEmail(Integer id, String email);
+
     //更改权限
     int updatePermission(Integer id, Integer admin);
 
