@@ -11,6 +11,10 @@ import com.ecnu.petHospital.user.param.LoginParam;
 import com.ecnu.petHospital.user.param.RegisterParam;
 import com.ecnu.petHospital.user.service.UserService;
 import com.ecnu.petHospital.user.session.UserSessionInfo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,11 +26,17 @@ import javax.servlet.http.HttpSession;
 
 @RestController
 @CrossOrigin
+@Api("登录注册")
 public class LoginController {
 
     @Autowired
     private UserService userService;
 
+    @ApiOperation(value = "登录", response = Result.class)
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "email", value = "注册邮箱", required = true, paramType = "query", dataType = "String"),
+            @ApiImplicitParam(name = "password", value = "密码", required = true, paramType = "query", dataType = "String")
+    })
     @PostMapping("/login")
     public Result<?> login(@RequestParam String username, @RequestParam String  password,
                            HttpSession httpSession){
