@@ -29,7 +29,7 @@ public class Swagger2Config {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("petHospital API Documentation")
-                .description("软件开发实践项目接口文档")
+                .description("软件开发实践项目接口文档 test1")
                 //.termsOfServiceUrl("http://localhost:8080/swagger-ui.html")//数据源
                 .version("1.0")
                 .build();
