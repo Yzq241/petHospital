@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class testController {
     @RequestMapping("/index")
     public String index(){
-        return "index";
+        return "index000000000";
     }
 }
