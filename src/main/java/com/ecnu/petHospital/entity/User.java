@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class User {
     @Id
-    private int id;
+    private Integer id;
 
     private String username;
 
