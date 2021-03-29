@@ -1,15 +1,15 @@
-package com.ecnu.petHospital.user.service;
+package com.ecnu.petHospital.service;
 
 import com.ecnu.petHospital.entity.User;
 import com.ecnu.petHospital.paging.PageParam;
-import com.ecnu.petHospital.user.dao.UserMapper;
-import com.ecnu.petHospital.user.exception.IncorrectUsernameOrPasswordException;
-import com.ecnu.petHospital.user.exception.UsernameAlreadyExistException;
-import com.ecnu.petHospital.user.exception.UsernameNotExistsException;
-import com.ecnu.petHospital.user.param.LoginParam;
-import com.ecnu.petHospital.user.param.RegisterParam;
-import com.ecnu.petHospital.user.session.UserSessionInfo;
-import com.ecnu.petHospital.user.vo.UserVO;
+import com.ecnu.petHospital.dao.UserMapper;
+import com.ecnu.petHospital.exception.IncorrectUsernameOrPasswordException;
+import com.ecnu.petHospital.exception.UsernameAlreadyExistException;
+import com.ecnu.petHospital.exception.UsernameNotExistsException;
+import com.ecnu.petHospital.param.LoginParam;
+import com.ecnu.petHospital.param.RegisterParam;
+import com.ecnu.petHospital.session.UserSessionInfo;
+import com.ecnu.petHospital.vo.UserVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

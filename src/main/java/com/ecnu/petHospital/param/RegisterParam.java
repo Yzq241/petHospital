@@ -1,4 +1,4 @@
-package com.ecnu.petHospital.user.param;
+package com.ecnu.petHospital.param;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginParam {
+public class RegisterParam {
 
     @NotNull
     @Length(min = 1, max = 20)
@@ -19,5 +19,8 @@ public class LoginParam {
     @NotNull
     @Length(min = 8, max = 20)
     private String password;
+
+    @NotNull
+    private String email;
 
 }

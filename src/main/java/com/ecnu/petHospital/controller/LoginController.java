@@ -1,16 +1,16 @@
-package com.ecnu.petHospital.user.controller;
+package com.ecnu.petHospital.controller;
 
 import com.ecnu.petHospital.entity.User;
 import com.ecnu.petHospital.result.CommonResult;
 import com.ecnu.petHospital.result.Result;
 import com.ecnu.petHospital.result.UserResult;
-import com.ecnu.petHospital.user.exception.IncorrectUsernameOrPasswordException;
-import com.ecnu.petHospital.user.exception.UsernameAlreadyExistException;
-import com.ecnu.petHospital.user.exception.UsernameNotExistsException;
-import com.ecnu.petHospital.user.param.LoginParam;
-import com.ecnu.petHospital.user.param.RegisterParam;
-import com.ecnu.petHospital.user.service.UserService;
-import com.ecnu.petHospital.user.session.UserSessionInfo;
+import com.ecnu.petHospital.exception.IncorrectUsernameOrPasswordException;
+import com.ecnu.petHospital.exception.UsernameAlreadyExistException;
+import com.ecnu.petHospital.exception.UsernameNotExistsException;
+import com.ecnu.petHospital.param.LoginParam;
+import com.ecnu.petHospital.param.RegisterParam;
+import com.ecnu.petHospital.service.UserService;
+import com.ecnu.petHospital.session.UserSessionInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

@@ -1,4 +1,4 @@
-package com.ecnu.petHospital.user.vo;
+package com.ecnu.petHospital.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

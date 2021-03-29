@@ -1,4 +1,4 @@
-package com.ecnu.petHospital.user.session;
+package com.ecnu.petHospital.session;
 
 
 import lombok.AllArgsConstructor;

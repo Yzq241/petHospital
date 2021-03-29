@@ -1,4 +1,4 @@
-package com.ecnu.petHospital.user.exception;
+package com.ecnu.petHospital.exception;
 
 public class UsernameNotExistsException extends RuntimeException {
     public UsernameNotExistsException() {

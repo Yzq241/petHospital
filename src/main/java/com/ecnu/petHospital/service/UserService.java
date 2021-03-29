@@ -1,11 +1,11 @@
-package com.ecnu.petHospital.user.service;
+package com.ecnu.petHospital.service;
 
 import com.ecnu.petHospital.entity.User;
 import com.ecnu.petHospital.paging.PageParam;
-import com.ecnu.petHospital.user.param.LoginParam;
-import com.ecnu.petHospital.user.param.RegisterParam;
-import com.ecnu.petHospital.user.session.UserSessionInfo;
-import com.ecnu.petHospital.user.vo.UserVO;
+import com.ecnu.petHospital.param.LoginParam;
+import com.ecnu.petHospital.param.RegisterParam;
+import com.ecnu.petHospital.session.UserSessionInfo;
+import com.ecnu.petHospital.vo.UserVO;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package com.ecnu.petHospital.user.dao;
+package com.ecnu.petHospital.dao;
 
 import com.ecnu.petHospital.entity.User;
 import com.ecnu.petHospital.paging.PageParam;
-import com.ecnu.petHospital.user.vo.UserVO;
+import com.ecnu.petHospital.vo.UserVO;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

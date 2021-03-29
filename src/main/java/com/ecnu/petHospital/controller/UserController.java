@@ -1,13 +1,13 @@
-package com.ecnu.petHospital.user.controller;
+package com.ecnu.petHospital.controller;
 
 import com.ecnu.petHospital.paging.PageParam;
 import com.ecnu.petHospital.result.CommonResult;
 import com.ecnu.petHospital.result.Result;
 import com.ecnu.petHospital.result.UserResult;
-import com.ecnu.petHospital.user.exception.IncorrectUsernameOrPasswordException;
-import com.ecnu.petHospital.user.exception.UsernameAlreadyExistException;
-import com.ecnu.petHospital.user.service.UserService;
-import com.ecnu.petHospital.user.session.UserSessionInfo;
+import com.ecnu.petHospital.exception.IncorrectUsernameOrPasswordException;
+import com.ecnu.petHospital.exception.UsernameAlreadyExistException;
+import com.ecnu.petHospital.service.UserService;
+import com.ecnu.petHospital.session.UserSessionInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
