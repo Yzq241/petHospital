@@ -1,4 +1,4 @@
-package com.ecnu.petHospital.service;
+package com.ecnu.petHospital.service.impl;
 
 import com.ecnu.petHospital.entity.User;
 import com.ecnu.petHospital.paging.PageParam;
@@ -8,6 +8,7 @@ import com.ecnu.petHospital.exception.UsernameAlreadyExistException;
 import com.ecnu.petHospital.exception.UsernameNotExistsException;
 import com.ecnu.petHospital.param.LoginParam;
 import com.ecnu.petHospital.param.RegisterParam;
+import com.ecnu.petHospital.service.UserService;
 import com.ecnu.petHospital.session.UserSessionInfo;
 import com.ecnu.petHospital.vo.UserVO;
 import org.springframework.beans.BeanUtils;
