@@ -3,16 +3,18 @@ package com.ecnu.petHospital.service.impl;
 import com.ecnu.petHospital.entity.User;
 import com.ecnu.petHospital.enums.CustomExceptionType;
 import com.ecnu.petHospital.exception.CustomException;
-import com.ecnu.petHospital.paging.PageParam;
 import com.ecnu.petHospital.dao.UserMapper;
 import com.ecnu.petHospital.exception.IncorrectUsernameOrPasswordException;
 import com.ecnu.petHospital.exception.UsernameAlreadyExistException;
 import com.ecnu.petHospital.exception.UsernameNotExistsException;
 import com.ecnu.petHospital.param.LoginParam;
+import com.ecnu.petHospital.param.PageParam;
 import com.ecnu.petHospital.param.RegisterParam;
 import com.ecnu.petHospital.service.UserService;
 import com.ecnu.petHospital.session.UserSessionInfo;
 import com.ecnu.petHospital.vo.UserVO;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -103,8 +105,11 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public List<User> getUserList(PageParam pageParam) {
-        return userMapper.getUserList(pageParam);
+    public PageInfo<User> getUserList(PageParam pageParam) {
+        PageHelper.startPage(pageParam.getPageNum(),pageParam.getPageSize());
+
+        List<User> userList = userMapper.getUserList();
+        return new PageInfo<>(userList);
     }
 
     @Override

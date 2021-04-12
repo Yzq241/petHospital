@@ -1,11 +1,12 @@
 package com.ecnu.petHospital.service;
 
 import com.ecnu.petHospital.entity.User;
-import com.ecnu.petHospital.paging.PageParam;
 import com.ecnu.petHospital.param.LoginParam;
+import com.ecnu.petHospital.param.PageParam;
 import com.ecnu.petHospital.param.RegisterParam;
 import com.ecnu.petHospital.session.UserSessionInfo;
 import com.ecnu.petHospital.vo.UserVO;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -40,7 +41,7 @@ public interface UserService {
     int updatePermission(Integer id, Integer admin);
 
     //获取所有用户
-    List<User> getUserList(PageParam pageParam);
+    PageInfo<User> getUserList(PageParam pageParam);
 
     //删除用户
     int deleteUserById(Integer id);

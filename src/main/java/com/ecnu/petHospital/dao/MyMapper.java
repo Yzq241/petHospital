@@ -1,4 +1,4 @@
-package com.ecnu.petHospital;
+package com.ecnu.petHospital.dao;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;

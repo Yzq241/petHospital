@@ -1,7 +1,7 @@
 package com.ecnu.petHospital.service;
 
 import com.ecnu.petHospital.entity.Department;
-import com.ecnu.petHospital.entity.common.PageParam;
+import com.ecnu.petHospital.param.PageParam;
 import com.github.pagehelper.PageInfo;
 
 public interface DepartmentService {

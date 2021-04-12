@@ -2,7 +2,7 @@ package com.ecnu.petHospital.service.impl;
 
 import com.ecnu.petHospital.entity.Department;
 import com.ecnu.petHospital.dao.DepartmentMapper;
-import com.ecnu.petHospital.entity.common.PageParam;
+import com.ecnu.petHospital.param.PageParam;
 import com.ecnu.petHospital.enums.CustomExceptionType;
 import com.ecnu.petHospital.exception.CustomException;
 import com.ecnu.petHospital.service.DepartmentService;
@@ -31,10 +31,10 @@ public class DepartmentServiceImpl implements DepartmentService {
     public Department addDepartment(Department department) {
         Example example = new Example(Department.class);
         Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("name",department.getName());
+        criteria.andEqualTo("name", department.getName());
 
         Department department1 = departmentMapper.selectOneByExample(example);
-        if(department1!=null) throw new CustomException(CustomExceptionType.DEPARTMENT_ADD_ERROR);
+        if (department1 != null) throw new CustomException(CustomExceptionType.DEPARTMENT_ADD_ERROR);
         departmentMapper.insert(department);
         return departmentMapper.selectOneByExample(example);
     }
@@ -45,13 +45,14 @@ public class DepartmentServiceImpl implements DepartmentService {
         //修改科室名字时需注意不能跟已有科室重名
         Example example = new Example(Department.class);
         Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("name",department.getName());
+        criteria.andEqualTo("name", department.getName());
 
         Department department1 = departmentMapper.selectOneByExample(example);
-        if(department1!=null && department1!=department ) throw new CustomException(CustomExceptionType.DEPARTMENT_MODIFY_ERROR);
+        if (department1 != null && department1 != department)
+            throw new CustomException(CustomExceptionType.DEPARTMENT_MODIFY_ERROR);
 
 
-        return  departmentMapper.updateByPrimaryKey(department)>0;
+        return departmentMapper.updateByPrimaryKey(department) > 0;
 
     }
 
@@ -63,8 +64,8 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public PageInfo<Department> getDepartmentList(PageParam pageParam) {
-        PageHelper.startPage(pageParam.getPageNum(),pageParam.getPageSize(),pageParam.getOrderBy());
-        List<Department> departmentList=departmentMapper.selectAll();
+        PageHelper.startPage(pageParam.getPageNum(), pageParam.getPageSize());
+        List<Department> departmentList = departmentMapper.selectAll();
         return new PageInfo<>(departmentList);
     }
 }

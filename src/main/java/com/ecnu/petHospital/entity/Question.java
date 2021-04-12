@@ -17,5 +17,13 @@ public class Question {
 
     private String title;
 
+    private String a;
+
+    private String b;
+
+    private String c;
+
+    private String d;
+
     private String answer;
 }

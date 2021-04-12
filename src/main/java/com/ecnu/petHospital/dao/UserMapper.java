@@ -1,8 +1,6 @@
 package com.ecnu.petHospital.dao;
 
-import com.ecnu.petHospital.MyMapper;
 import com.ecnu.petHospital.entity.User;
-import com.ecnu.petHospital.paging.PageParam;
 import com.ecnu.petHospital.vo.UserVO;
 import org.apache.ibatis.annotations.*;
 
@@ -41,10 +39,12 @@ public interface UserMapper extends MyMapper<User> {
     @Update("update user set telephone=#{telephone} where id=#{id};")
     int updateTelephoneById(@Param("id") Integer id,
                             @Param("telephone") String telephone);
+
     //更新邮箱
     @Update("update user set email=#{email} where id=#{id};")
     int updateEmailById(@Param("id") Integer id,
-                            @Param("email") String email);
+                        @Param("email") String email);
+
     //更改权限
     @Update("update user set admin=#{admin} where id=#{id}")
     int updatePermission(@Param("id") Integer id,
@@ -52,16 +52,16 @@ public interface UserMapper extends MyMapper<User> {
 
     //根据用户名获取用户列表
     @Results(
-            id = "userList",value = {
-            @Result(property="username", column="username"),
-            @Result(property="password", column="password")
+            id = "userList", value = {
+            @Result(property = "username", column = "username"),
+            @Result(property = "password", column = "password")
     }
     )
 
     //获取所有用户
     //@ResultMap("userList")
-    @Select("SELECT * FROM user order by id desc limit ${pageParam.pageSize * (pageParam.pageNum - 1)},#{pageParam.pageSize};")
-    List<User> getUserList(@Param("pageParam") PageParam pageParam);
+    @Select("SELECT * FROM user order by id desc;")
+    List<User> getUserList();
 
     //删除用户
     @Delete("delete from user where id = #{id};")

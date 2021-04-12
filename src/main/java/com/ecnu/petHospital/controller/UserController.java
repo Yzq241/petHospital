@@ -1,6 +1,6 @@
 package com.ecnu.petHospital.controller;
 
-import com.ecnu.petHospital.paging.PageParam;
+import com.ecnu.petHospital.param.PageParam;
 import com.ecnu.petHospital.result.CommonResult;
 import com.ecnu.petHospital.result.Result;
 import com.ecnu.petHospital.result.UserResult;
@@ -98,7 +98,7 @@ public class UserController {
             return CommonResult.accessDenied();
         }
 
-        return CommonResult.success().data(service.getUserList(pageParam)).total(service.getCountOfUser());
+        return CommonResult.success().data(service.getUserList(pageParam));
     }
    //ok
     @PostMapping("get")
