@@ -1,5 +1,6 @@
 package com.ecnu.petHospital.controller;
 
+import com.ecnu.petHospital.param.AnswerSheet;
 import com.ecnu.petHospital.param.PageParam;
 import com.ecnu.petHospital.param.TestParam;
 import com.ecnu.petHospital.result.CommonResult;
@@ -38,5 +39,17 @@ public class TestController {
     public Result<?> getTest(@RequestParam Integer testId){
 
         return CommonResult.success().data(testService.getTest(testId));
+    }
+
+    @PostMapping("/doTest")
+    public Result<?> doTest(@RequestBody AnswerSheet answerSheet){
+        testService.doTest(answerSheet);
+        return CommonResult.success();
+    }
+
+    @PostMapping("/getTestLog")
+    public Result<?> getTestLog(@RequestParam Integer testId, @RequestParam Integer userId){
+
+        return CommonResult.success().data(testService.getTestLog(testId, userId));
     }
 }
